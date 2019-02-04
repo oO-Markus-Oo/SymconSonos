@@ -36,7 +36,8 @@ $vidPlaymode      = @IPS_GetObjectIDByName("PlayMode",      $vidInstance);
 // If the Sonos instance is not available update of grouping makes no sense
 if ( $timeout && Sys_Ping($ip, $timeout) == false ){
   @IPS_SetScriptTimer($_IPS["SELF"], $frequencyNotAvailable );
-  die('Sonos instance '.$ip.' is not available');
+  //die('Sonos instance '.$ip.' is not available');
+  exit;
 }
 
 @IPS_SetScriptTimer($_IPS["SELF"], $frequency );
