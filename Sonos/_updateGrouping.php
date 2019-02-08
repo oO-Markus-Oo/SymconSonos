@@ -42,6 +42,12 @@ foreach($allSonosInstances as $key=>$SonosID) {
 		}
     }
 
+    if(!isset($group))
+    {
+        // Only one SONOS device found, grouping not possible
+        exit;
+    }	
+	
     $instance = Array( ("ID")          => $SonosID,
                        ("RINCON")      => $rincon,
                        ("COORDINATOR") => $coordinatorInSonos,
