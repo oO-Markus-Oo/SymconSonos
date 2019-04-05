@@ -26,6 +26,7 @@ IPS_SetScriptTimer($_IPS["SELF"], $frequency);
 $sonos = new SonosAccess($ipAddress);
 
 $grouping = new SimpleXMLElement($sonos->GetZoneGroupState());
+$group = 0;
 
 foreach($allSonosInstances as $key=>$SonosID) {
     $rincon = IPS_GetProperty($SonosID ,"RINCON");
