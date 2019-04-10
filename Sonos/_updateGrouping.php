@@ -71,7 +71,8 @@ foreach($rinconMapping as $key=>$instance){
 }
 
 if(!isset($MemberOfGroupSonos))
-    die ("Coordinator Instance for Group of Sonos Instance ".$sonosInstanceID." not found");
+	// Only one SONOS device found, grouping not possible
+	exit;
 
 if($MemberOfGroupIPS['ID'] != $MemberOfGroupSonos['ID']){
     if($forceGrouping){
